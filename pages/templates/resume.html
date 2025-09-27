@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Resume - My Resume" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "🎓 Education" %}</h1>
+<ul>
+    <li>
+        {% trans "Azad University of Karaj — B.Sc. in Computer Engineering" %}
+        {% trans "(Software Engineering) since 2024" %}
+    </li>
+
+
+    <li>
+        {% blocktrans %}
+        Currently in my 3rd term
+        {% endblocktrans %}
+    </li>
+</ul>
+
+<h1>{% trans "🛠 Skills" %}</h1>
+<ul>
+    <li>{% trans "Languages: Python, C#, SQLite" %}</li>
+    <li>{% trans "Frameworks: Django (learning), ASP.NET Core (learning)" %}</li>
+    <li>{% trans "Other: Git/GitHub, algorithms, data structures, problem-solving" %}</li>
+</ul>
+
+
+
+<h1>{% trans "🚀 Goals" %}</h1>
+<ul>
+    <li>{% trans "Freelance backend development (remote, flexible work)" %}</li>
+    <li>{% trans "Exploring Data Science & Machine Learning" %}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Home - Amirali" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Hi, I’m Amirali 👋" %}</h1>
+
+<p>
+    {% trans "I’m a computer Engineering student" %}.
+    {% trans "and an aspiring backend developer." %}
+</p>
+
+<p>{% trans "I love solving problems with code, working with Python and C#." %}</p>
+
+<p>
+    {% trans "I also enjoy experimenting with frameworks" %}
+    {% trans "like Django and ASP.NET Core." %}
+</p>
+
+
+<p>{% trans "This site is a small demo of who I am and what I do." %}</p>
+<p>{% trans "Feel free to look around!" %}</p>
+{% endblock %}

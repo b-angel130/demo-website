@@ -1,0 +1,91 @@
+/* Sidebar styling */
+.sidebar {
+    position: fixed;       /* sticks it to viewport */
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #2c3e50; /* dark blue */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar heading */
+.sidebar h2 {
+    color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Sidebar links */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;  /* allow space for vertical layout */
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #ecf0f1;           /* light text for visibility */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hover and active effect for links */
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #e74c3c; /* red highlight */
+    color: white;
+}
+
+/* Language links container */
+.sidebar .language-links {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 30px;        /* space below main links */
+}
+
+.sidebar .language-links li {
+    margin: 10px 0;
+}
+
+.sidebar .language-links li a {
+    color: #f1c40f;          /* bright yellow for visibility */
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Hover and active effect for language links */
+.sidebar .language-links li a:hover,
+.sidebar .language-links li a.active {
+    background-color: #e67e22; /* orange highlight */
+    color: white;
+}
+
+/* Main content area */
+.content {
+    margin-left: 220px;          /* leave space for sidebar */
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+/* Body background and text color */
+body {
+    background-color: #fff8e7;   /* soft background */
+    color: #333;
+}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "About Me" %}{% endblock %}
+
+{% block content %}
+<h1>
+    {% trans "I’m 20 years old" %}
+    {% trans "and currently studying Computer Engineering (Software Engineering)" %}
+    <br>
+
+    {% blocktrans %}at Azad University of Karaj.{% endblocktrans %}
+</h1>
+
+<p>
+    {% blocktrans %}I enjoy working on backend development, algorithms, and problem-solving.{% endblocktrans %}
+</p>
+
+<p>
+    {% blocktrans %}Outside of coding, I’m always learning new things — from data science and AI{% endblocktrans %}
+    <br>
+    {% blocktrans %}to exploring different programming frameworks.{% endblocktrans %}
+</p>
+
+<p>
+    {% blocktrans %}My long-term goal is to work as a freelance backend developer,{% endblocktrans %}
+    <br>
+    {% blocktrans %}building reliable software while keeping the freedom to work from anywhere.{% endblocktrans %}
+</p>
+{% endblock %}
+
+
