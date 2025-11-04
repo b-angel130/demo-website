@@ -15,17 +15,62 @@
     <div class="sidebar">
         <h2>Amirali</h2>
         <ul>
-            <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">{% trans "Home" %}</a></li>
-            <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">{% trans "About" %}</a></li>
-            <li><a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">{% trans "Resume" %}</a></li>
-            <li><a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">{% trans "Contact" %}</a></li>
+            <li>
+                <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">
+                    {% trans "Home" %}
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">
+                    {% trans "About" %}
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
+                    {% trans "Resume" %}
+                </a>
+            </li>
+
+                        <li>
+                <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">
+                    {% trans "Contact" %}
+                </a>
+            </li>
+
+
+            <!--  Divider between main links and menu links -->
+            <li><hr class="menu-divider"></li>
+
+
+            <li>
+                <a href="{% url 'menu' %}" class="{% if request.path == '/menu/' %}active{% endif %}">
+                    منوی دمو
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'dynamic_menu' %}" class="{% if request.path == '/dynamic-menu/' %}active{% endif %}">
+                    منوی پویا
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'admin_guide' %}" class="{% if request.path == '/admin-guide/' %}active{% endif %}">
+                    {% trans "پنل ادمین" %}
+                </a>
+            </li>
+
         </ul>
 
         <!-- Language Links -->
         <ul class="language-links">
-            <li><a href="/" class="{% if LANGUAGE_CODE == 'en' %}active{% endif %}">English</a></li>
-            <li><a href="/fa/" class="{% if LANGUAGE_CODE == 'fa' %}active{% endif %}">فارسی</a></li>
-            <li><a href="/it/" class="{% if LANGUAGE_CODE == 'it' %}active{% endif %}">Italiano</a></li>
+            <li>
+                <a href="/" class="{% if LANGUAGE_CODE == 'en' %}active{% endif %}">English</a>
+            </li>
+            <li>
+                <a href="/fa/" class="{% if LANGUAGE_CODE == 'fa' %}active{% endif %}">فارسی</a>
+            </li>
+            <li>
+                <a href="/it/" class="{% if LANGUAGE_CODE == 'it' %}active{% endif %}">Italiano</a>
+            </li>
         </ul>
 
     </div>

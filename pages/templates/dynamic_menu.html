@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+  body {
+    background-image: url("{% static 'images/background/background.webp' %}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Vazirmatn", sans-serif;
+    direction: rtl;
+    color: #222;
+  }
+
+  .menu-header {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .menu-header .header-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .menu-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 15px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  }
+
+  .menu-buttons {
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .menu-buttons a {
+    background-color: #009879;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .menu-buttons a:hover {
+    background-color: #00b38f;
+  }
+
+  .menu-section {
+    background: rgba(255, 255, 255, 0.92);
+    margin: 40px auto;
+    padding: 25px;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  }
+
+  .menu-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 25px;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+
+  .menu-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 15px;
+  }
+
+  .menu-text {
+    flex: 1;
+  }
+
+  .menu-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .menu-text p {
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .menu-text span {
+    color: #009879;
+    font-weight: bold;
+  }
+</style>
+
+<div class="menu-header">
+  <img src="{% static 'images/logo/logo.jfif' %}" alt="Cafe Logo" class="header-logo">
+  <h1 class="menu-title">رستوران دمو ی رشیدی</h1>
+  <p style="color:#eee;">منوی غذاهای رستوران — مشاهده و انتخاب غذا</p>
+</div>
+
+<div class="menu-buttons">
+  <a href="#appetizers">پیش‌غذا</a>
+  <a href="#mains">غذای اصلی</a>
+  <a href="#drinks">نوشیدنی‌ها</a>
+  <a href="{% url 'reservation' %}">رزرو میز 🍽️</a>
+</div>
+
+<section id="appetizers" class="menu-section">
+  <h2>🥗 پیش‌غذا</h2>
+  {% for item in appetizers %}
+    <div class="menu-item">
+      {% if item.image %}
+        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+      {% else %}
+        <img src="{% static 'images/no-image.png' %}" alt="بدون تصویر">
+      {% endif %}
+      <div class="menu-text">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <strong>{{ item.price|floatformat:0 }} تومان</strong>
+      </div>
+    </div>
+  {% empty %}
+    <p>هنوز هیچ پیش‌غذایی ثبت نشده است.</p>
+  {% endfor %}
+</section>
+
+<section id="mains" class="menu-section">
+  <h2>🍛 غذای اصلی</h2>
+  {% for item in mains %}
+    <div class="menu-item">
+      {% if item.image %}
+        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+      {% else %}
+        <img src="{% static 'images/no-image.png' %}" alt="بدون تصویر">
+      {% endif %}
+      <div class="menu-text">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <strong>{{ item.price|floatformat:0 }} تومان</strong>
+      </div>
+    </div>
+  {% empty %}
+    <p>هنوز هیچ غذای اصلی ثبت نشده است.</p>
+  {% endfor %}
+</section>
+
+<section id="drinks" class="menu-section">
+  <h2>☕ نوشیدنی‌ها</h2>
+  {% for item in drinks %}
+    <div class="menu-item">
+      {% if item.image %}
+        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+      {% else %}
+        <img src="{% static 'images/no-image.png' %}" alt="بدون تصویر">
+      {% endif %}
+      <div class="menu-text">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <strong>{{ item.price|floatformat:0 }} تومان</strong>
+      </div>
+    </div>
+  {% empty %}
+    <p>هنوز هیچ نوشیدنی ثبت نشده است.</p>
+  {% endfor %}
+</section>
+
+
+{% endblock %}

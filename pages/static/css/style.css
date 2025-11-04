@@ -1,11 +1,11 @@
 /* Sidebar styling */
 .sidebar {
-    position: fixed;       /* sticks it to viewport */
+    position: fixed;
     top: 0;
     left: 0;
     width: 200px;
     height: 100vh;
-    background-color: #2c3e50; /* dark blue */
+    background-color: #2c3e50;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.2);
     z-index: 1000;
@@ -25,7 +25,7 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-    flex-grow: 1;  /* allow space for vertical layout */
+    flex-grow: 1;
 }
 
 .sidebar ul li {
@@ -33,7 +33,7 @@
 }
 
 .sidebar ul li a {
-    color: #ecf0f1;           /* light text for visibility */
+    color: #ecf0f1;
     text-decoration: none;
     display: block;
     padding: 10px;
@@ -41,18 +41,57 @@
     transition: all 0.3s ease;
 }
 
-/* Hover and active effect for links */
+/* Hover and active effects */
 .sidebar ul li a:hover,
 .sidebar ul li a.active {
-    background-color: #e74c3c; /* red highlight */
+    background-color: #e74c3c;
     color: white;
+}
+
+/* Hover movement */
+.sidebar ul li a:hover {
+    background-color: #c0392b;
+    transform: translateX(4px);
+}
+
+.sidebar ul li a.active {
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+}
+
+/* === Menu section divider line === */
+.sidebar ul::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 15px 0;
+}
+
+/* === Special style for Menu links === */
+.sidebar ul li a[href*="menu"],
+.sidebar ul li a[href*="admin-guide"] {
+    color: #f39c12; /* orange text for menu & admin guide links */
+}
+
+.sidebar ul li a[href*="menu"]:hover,
+.sidebar ul li a[href*="menu"].active,
+.sidebar ul li a[href*="admin-guide"]:hover,
+.sidebar ul li a[href*="admin-guide"].active {
+    background-color: #f39c12;
+    color: white;
+    font-weight: bold;
 }
 
 /* Language links container */
 .sidebar .language-links {
     list-style-type: none;
     padding: 0;
-    margin-top: 30px;        /* space below main links */
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 15px;
 }
 
 .sidebar .language-links li {
@@ -60,7 +99,7 @@
 }
 
 .sidebar .language-links li a {
-    color: #f1c40f;          /* bright yellow for visibility */
+    color: #f1c40f;
     text-decoration: none;
     display: block;
     padding: 8px;
@@ -73,19 +112,250 @@
 /* Hover and active effect for language links */
 .sidebar .language-links li a:hover,
 .sidebar .language-links li a.active {
-    background-color: #e67e22; /* orange highlight */
+    background-color: #e67e22;
     color: white;
 }
 
 /* Main content area */
 .content {
-    margin-left: 220px;          /* leave space for sidebar */
+    margin-left: 220px;
     padding: 40px;
     font-family: Arial, sans-serif;
 }
 
 /* Body background and text color */
 body {
-    background-color: #fff8e7;   /* soft background */
+    background-color: #fff8e7;
     color: #333;
+}
+
+/* Buttons at top (to jump to sections) */
+.menu-nav {
+    margin-bottom: 20px;
+}
+.menu-nav a {
+    text-decoration: none;
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-right: 8px;
+    transition: background-color 0.3s;
+}
+.menu-nav a:hover {
+    background-color: #3d5266;
+}
+
+/* Menu boxes */
+.menu-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+/* Menu item image */
+.menu-item img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Menu item text */
+.menu-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+}
+.menu-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Menu header titles */
+.menu-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+}
+
+.menu-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Navigation buttons in menus */
+.menu-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-nav a {
+    background-color: #222;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.menu-nav a:hover {
+    background-color: #555;
+}
+
+/* Menu sections */
+.menu-section {
+    padding: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.menu-text h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.menu-text p {
+    margin: 4px 0 0;
+    color: #555;
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 8px;
+    }
+
+    .menu-text h3 {
+        font-size: 1rem;
+    }
+}
+
+/* === Logo styling === */
+.header-logo {
+    width: 50px;
+    height: auto;
+    margin-left: 0px;
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* === Reservation Button Styling === */
+.reservation-button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.reservation-button {
+    display: inline-block;
+    background-color: #c0392b;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.reservation-button:hover {
+    background-color: #e74c3c;
+}
+
+/* === Reservation Form Styling === */
+.reservation-form {
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reservation-form label {
+    font-weight: bold;
+}
+
+.reservation-form input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* === Submit Button === */
+.reservation-form button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background-color: #2ecc71;
+}
+
+/* === Back Button === */
+.back-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    color: white;
+    background-color: #34495e;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.back-button:hover {
+    background-color: #2c3e50;
+}
+
+/* === Dynamic Menu Background === */
+body.dynamic-menu {
+    background-image: url("{% static 'images/background/background1.1.webp' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }

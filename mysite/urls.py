@@ -14,19 +14,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
+from django.conf import settings
+from django.conf.urls.static import static
 
+#  Base URL patterns
 urlpatterns = [
-    # Enables the language switcher
+
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
+# Internationalized patterns (main site)
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path('', include('pages.urls')),  # your app pages
-    prefix_default_language=False,    # English uses '/'
+    path('', include('pages.urls')),  #  main app
+    prefix_default_language=False,     #
 )
 
+#  Add static and media during development
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

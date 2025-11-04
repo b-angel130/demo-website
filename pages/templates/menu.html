@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- ====== Custom Styles for This Page ====== -->
+<style>
+/* === Page Background === */
+body {
+  background-image: url("{% static 'images/background/background.webp' %}");
+  background-size: center;         /* Make the image fill the page */
+  background-position: center;    /* Keep it centered */
+                                   /* No tiling */
+  background-attachment: fixed;   /* Keep it static while scrolling */
+}
+
+/* === Header Section === */
+.menu-header {
+  display: flex;                  /* Place logo and text in one line */
+  align-items: center;            /* Vertically center logo and title */
+  justify-content: center;        /* Center the whole header horizontally */
+  gap: 12px;                      /* Space between logo and text */
+  margin-top: 30px;               /* Push it down a bit from the top */
+}
+
+/* === Logo Styling === */
+.header-logo {
+  width: 60px;                    /* Default logo size */
+  height: auto;                   /* Keep proportions */
+  border-radius: 50%;             /* Optional: makes it circular */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* === Restaurant Name === */
+.menu-title {
+  font-size: 2rem;                /* Nice readable size */
+  color: #fff;                    /* White text to contrast background */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Make it stand out */
+  margin: 0;                      /* Remove default space around title */
+}
+
+/* === Subtitle Text === */
+.menu-subtitle {
+  text-align: center;
+  color: #f5f5f5;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* === Responsive Design (for mobile) === */
+@media (max-width: 600px) {
+  .header-logo {
+    width: 40px;                  /* Smaller logo for small screens */
+  }
+
+  .menu-title {
+    font-size: 1.4rem;            /* Slightly smaller title on phones */
+  }
+
+  .menu-header {
+    gap: 8px;                     /* Slightly reduce gap on small screens */
+  }
+}
+</style>
+
+<!-- ====== Header with logo and restaurant name ====== -->
+<div class="menu-header">
+  <img src="{% static 'images/logo/logo.jfif' %}" alt="Cafe Logo" class="header-logo">
+  <h1 class="menu-title">رستوران دمو ی رشیدی</h1>
+</div>
+
+<p class="menu-subtitle">نمونه ای از کار من و محصول نهایی</p>
+
+<!-- ====== Navigation Buttons ====== -->
+<nav class="menu-nav">
+  <a href="#soups">🍲 سوپ ها</a>
+  <a href="#mains">🍛 غذای اصلی</a>
+  <a href="#drinks">☕ نوشیدنی‌ها</a>
+</nav>
+
+<!-- ====== Soups Section ====== -->
+<section id="soups" class="menu-section">
+  <h2>🍲 سوپ ها</h2>
+
+  <div class="menu-item">
+    <img src="{% static 'images/menu/roasted-tomato-soup-1-1.jpg' %}" alt="Tomato Soup">
+    <div class="menu-text">
+      <h3>سوپ گوجه</h3>
+      <p>گوجه فرنگی، روغن زیتون، پیاز.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="{% static 'images/menu/chicken-soup.jfif' %}" alt="Chicken Soup">
+    <div class="menu-text">
+      <h3>سوپ مرغ</h3>
+      <p>سیب زمینی، لیمو ترش، پیاز، سینه مرغ.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Main Dishes Section ====== -->
+<section id="mains" class="menu-section">
+  <h2>🍛 غذای اصلی</h2>
+
+  <div class="menu-item">
+    <img src="{% static 'images/menu/images.jfif' %}" alt="Kebab">
+    <div class="menu-text">
+      <h3>کباب کوبیده</h3>
+      <p>گوشت گوسفندی، پیاز، زعفران، کره.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="{% static 'images/menu/pasta-lafredo.jpg' %}" alt="Pasta">
+    <div class="menu-text">
+      <h3>پاستا آلفردو</h3>
+      <p>سس خامه‌ای، مرغ، قارچ، فلفل سیاه.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Drinks Section ====== -->
+<section id="drinks" class="menu-section">
+  <h2>☕ نوشیدنی‌ها</h2>
+
+  <div class="menu-item">
+    <img src="{% static 'images/menu/perfect-espresso.webp' %}" alt="Coffee">
+    <div class="menu-text">
+      <h3>قهوه اسپرسو</h3>
+      <p>دانه قهوه آسیاب شده، آب داغ.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="{% static 'images/menu/green-tea.jpg' %}" alt="Tea">
+    <div class="menu-text">
+      <h3>چای سبز</h3>
+      <p>چای سبز، آب جوش، لیمو تازه.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+
+
+
+<!--  <h2 id="soups">سوپ ها</h2>
+<div class="menu-item"> ... </div>
+
+<h2 id="mains"> غذای اصلی </h2>
+<div class="menu-item"> ... </div>
+
+<h2 id="drinks"> نوشیدنی ها </h2>
+<div class="menu-item"> ... </div> -->

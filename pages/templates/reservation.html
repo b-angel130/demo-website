@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<style>
+body {
+  background-image: url("{% static 'images/background/background.webp' %}");
+  background-size: center;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.reservation-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 60px auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+</style>
+
+
+
+
+
+<h1>رزرو میز</h1>
+<p>لطفاً اطلاعات خود را وارد کنید تا میز شما رزرو شود.</p>
+
+<form action="{% url 'reservation' %}" method="post" class="reservation-form">
+  {% csrf_token %}
+
+  <label>نام شما:</label>
+  <input type="text" name="name" required>
+
+  <label>شماره تلفن:</label>
+  <input type="tel" name="phone" required pattern="[0-9]{11}" placeholder="مثلاً 09123456789">
+
+  <label>تاریخ رزرو:</label>
+  <input id="jalali-datepicker" type="text" name="date" required placeholder="مثلاً 1404/08/05">
+
+  <label>ساعت:</label>
+  <input type="time" name="time" required>
+
+  <label>تعداد نفرات:</label>
+  <input type="number" name="num_guests" min="1" max="20" required>
+
+  <label>درخواست ویژه (اختیاری):</label>
+  <textarea name="special_request" rows="3" placeholder="مثلاً تولد یا شام کاری..."></textarea>
+
+  <button type="submit">ارسال رزرو</button>
+</form>
+
+<!-- Back button -->
+<div class="back-button-container">
+  <a href="{% url 'dynamic_menu' %}" class="back-button">⬅ بازگشت به منو</a>
+</div>
+
+<!-- Persian Datepicker scripts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/persian-date@1.0.6/dist/persian-date.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+      $("#jalali-datepicker").persianDatepicker({
+          format: "YYYY/MM/DD",
+          autoClose: true,
+          initialValueType: 'gregorian',
+          calendarType: 'persian',
+          observer: true,
+          altField: '#gregorian-date',
+          altFormat: 'YYYY-MM-DD',
+      });
+  });
+</script>
+
+{% endblock %}
