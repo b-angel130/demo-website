@@ -353,9 +353,9 @@ body {
 
 /* === Dynamic Menu Background === */
 body.dynamic-menu {
-    background-image: url("{% static 'images/background/background1.1.webp' %}");
-    background-repeat: no-repeat;
+    background-image: url("/static/images/background/background1.1.webp");
+    background-size: cover;
     background-position: center;
-    background-size: 100% 100%;
     background-attachment: fixed;
 }
+
