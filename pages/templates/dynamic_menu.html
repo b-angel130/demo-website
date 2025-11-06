@@ -115,7 +115,7 @@
   <a href="#appetizers">پیش‌غذا</a>
   <a href="#mains">غذای اصلی</a>
   <a href="#drinks">نوشیدنی‌ها</a>
-  <a href="{% url 'reservation' %}">رزرو میز 🍽️</a>
+
 </div>
 
 <section id="appetizers" class="menu-section">
@@ -123,7 +123,7 @@
   {% for item in appetizers %}
     <div class="menu-item">
       {% if item.image %}
-        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+        <img src="/media/{{ item.image }}" alt="{{ item.name }}">
       {% else %}
         <img src="{% static 'images/no-image.png' %}" alt="بدون تصویر">
       {% endif %}
@@ -143,7 +143,7 @@
   {% for item in mains %}
     <div class="menu-item">
       {% if item.image %}
-        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+        <img src="/media/{{ item.image }}" alt="{{ item.name }}">
       {% else %}
         <img src="{% static 'images/no-image.png' %}" alt="بدون تصویر">
       {% endif %}
@@ -163,7 +163,7 @@
   {% for item in drinks %}
     <div class="menu-item">
       {% if item.image %}
-        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+        <img src="/media/{{ item.image }}" alt="{{ item.name }}">
       {% else %}
         <img src="{% static 'images/no-image.png' %}" alt="بدون تصویر">
       {% endif %}

@@ -57,6 +57,11 @@
                     {% trans "پنل ادمین" %}
                 </a>
             </li>
+             <li>
+                 <a href="{% url 'reservation' %}" class="{% if request.path == '/reservation/' %}active{% endif %} reserve-btn">
+                     رزرو میز
+                 </a>
+             </li>
 
         </ul>
 
