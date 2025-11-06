@@ -76,6 +76,7 @@ body {
   <a href="#soups">🍲 سوپ ها</a>
   <a href="#mains">🍛 غذای اصلی</a>
   <a href="#drinks">☕ نوشیدنی‌ها</a>
+  <a href="{% url 'reservation' %}">رزرو میز 🍽️</a>
 </nav>
 
 <!-- ====== Soups Section ====== -->
@@ -85,18 +86,28 @@ body {
   <div class="menu-item">
     <img src="{% static 'images/menu/roasted-tomato-soup-1-1.jpg' %}" alt="Tomato Soup">
     <div class="menu-text">
-      <h3>سوپ گوجه</h3>
-      <p>گوجه فرنگی، روغن زیتون، پیاز.</p>
+      <h3>سوپ گوجه — ۸۵,۰۰۰ تومان</h3>
+      <p>گوجه فرنگی تازه، پیاز کاراملی، عصاره سبزیجات، فلفل سیاه.</p>
     </div>
   </div>
 
   <div class="menu-item">
     <img src="{% static 'images/menu/chicken-soup.jfif' %}" alt="Chicken Soup">
     <div class="menu-text">
-      <h3>سوپ مرغ</h3>
-      <p>سیب زمینی، لیمو ترش، پیاز، سینه مرغ.</p>
+      <h3>سوپ مرغ — ۱۴۰,۰۰۰ تومان</h3>
+      <p>سینه مرغ، هویج، کرفس، لیمو، زردچوبه.</p>
     </div>
   </div>
+
+  <!-- NEW -->
+  <div class="menu-item">
+    <img src="{% static 'images/menu/mushroom-soup.jpg' %}" alt="Mushroom Soup">
+    <div class="menu-text">
+      <h3>سوپ قارچ خامه ای — ۴۹۵,۰۰۰ تومان</h3>
+      <p>قارچ تازه، خامه غلیظ، کره حیوانی، فلفل سفید، سیر تازه.</p>
+    </div>
+  </div>
+
 </section>
 
 <!-- ====== Main Dishes Section ====== -->
@@ -106,18 +117,36 @@ body {
   <div class="menu-item">
     <img src="{% static 'images/menu/images.jfif' %}" alt="Kebab">
     <div class="menu-text">
-      <h3>کباب کوبیده</h3>
-      <p>گوشت گوسفندی، پیاز، زعفران، کره.</p>
+      <h3>کباب کوبیده — ۱,۷۸۰,۰۰۰ تومان</h3>
+      <p>گوشت گوسفندی تازه، زعفران، سماق، کره محلی.</p>
     </div>
   </div>
 
   <div class="menu-item">
     <img src="{% static 'images/menu/pasta-lafredo.jpg' %}" alt="Pasta">
     <div class="menu-text">
-      <h3>پاستا آلفردو</h3>
-      <p>سس خامه‌ای، مرغ، قارچ، فلفل سیاه.</p>
+      <h3>پاستا آلفردو — ۹۲۰,۰۰۰ تومان</h3>
+      <p>سس آلفردوی خانگی، مرغ گریل شده، قارچ تازه، جعفری.</p>
     </div>
   </div>
+
+  <!-- NEW -->
+  <div class="menu-item">
+    <img src="{% static 'images/menu/steak.jpg' %}" alt="Steak">
+    <div class="menu-text">
+      <h3>استیک مخصوص — ۷,۸۹۰,۰۰۰ تومان</h3>
+      <p>راسته گوساله، سس قارچ، فلفل سیاه له شده، کره فرانسوی.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="{% static 'images/menu/salmon.jpg' %}" alt="Salmon">
+    <div class="menu-text">
+      <h3>فیله سالمون — ۵,۴۵۰,۰۰۰ تومان</h3>
+      <p>سالمون نروژی، سس ترخون تازه، لیمو امانی، روغن زیتون بکر.</p>
+    </div>
+  </div>
+
 </section>
 
 <!-- ====== Drinks Section ====== -->
@@ -125,23 +154,39 @@ body {
   <h2>☕ نوشیدنی‌ها</h2>
 
   <div class="menu-item">
-    <img src="{% static 'images/menu/perfect-espresso.webp' %}" alt="Coffee">
+    <img src="{% static 'images/menu/perfect-espresso.webp' %}" alt="Espresso">
     <div class="menu-text">
-      <h3>قهوه اسپرسو</h3>
-      <p>دانه قهوه آسیاب شده، آب داغ.</p>
+      <h3>اسپرسو — ۲۱۰,۰۰۰ تومان</h3>
+      <p>اسپرسوی خالص ۱۰۰٪ عربیکا، رست متوسط، عصاره گیری ۹ بار.</p>
     </div>
   </div>
 
   <div class="menu-item">
     <img src="{% static 'images/menu/green-tea.jpg' %}" alt="Tea">
     <div class="menu-text">
-      <h3>چای سبز</h3>
-      <p>چای سبز، آب جوش، لیمو تازه.</p>
+      <h3>چای سبز — ۱۲۵,۰۰۰ تومان</h3>
+      <p>چای سبز ژاپنی، لیموی تازه، سرو آرام.</p>
     </div>
   </div>
-</section>
 
-{% endblock %}
+  <!-- NEW -->
+  <div class="menu-item">
+    <img src="{% static 'images/menu/iced-latte.jpg' %}" alt="Iced Latte">
+    <div class="menu-text">
+      <h3>آیس لاته — ۳۸۰,۰۰۰ تومان</h3>
+      <p>شیر سرد، اسپرسوی دوبل، یخ شفاف، سیرپ وانیل.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="{% static 'images/menu/fresh-juice.jpg' %}" alt="Fresh Juice">
+    <div class="menu-text">
+      <h3>آبمیوه طبیعی فصل — ۲۹۵,۰۰۰ تومان</h3>
+      <p>انتخابی از پرتقال، هویج، سیب یا انبه تازه.</p>
+    </div>
+  </div>
+
+</section>
 
 
 

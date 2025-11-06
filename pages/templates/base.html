@@ -47,11 +47,7 @@
                     منوی دمو
                 </a>
             </li>
-            <li>
-                <a href="{% url 'dynamic_menu' %}" class="{% if request.path == '/dynamic-menu/' %}active{% endif %}">
-                    منوی پویا
-                </a>
-            </li>
+
             <li>
                 <a href="{% url 'admin_guide' %}" class="{% if request.path == '/admin-guide/' %}active{% endif %}">
                     {% trans "پنل ادمین" %}
