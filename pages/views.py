@@ -4,6 +4,9 @@ from django.utils import timezone
 from .models import MenuItem, Table, Reservation
 from jalali_date import date2jalali
 import jdatetime
+from django.http import HttpResponse
+
+
 
 
 # -------------------- Portfolio Pages --------------------
@@ -55,6 +58,24 @@ def dynamic_menu_view(request):
 
 
 
+
+
+def fix_categories(request):
+    corrections = {
+        "پیش‌غذا / Appetizer": "appetizer",
+        "غذای اصلی / Main": "main",
+        " غذای اصلی / Main": "main",
+        "نوشیدنی / Drink": "drink",
+    }
+
+    changed = 0
+    for item in MenuItem.objects.all():
+        if item.category in corrections:
+            item.category = corrections[item.category]
+            item.save()
+            changed += 1
+
+    return HttpResponse(f"✅ Categories fixed. Updated {changed} items.")
 # -------------------- Reservation Page --------------------
 
 def reservation(request):

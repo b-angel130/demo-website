@@ -10,5 +10,7 @@ urlpatterns = [
     path("dynamic-menu/", views.dynamic_menu_view, name="dynamic_menu"),  #  dynamic menu
     path("reservation/", views.reservation, name="reservation"),
     path("admin-guide/", views.admin_guide, name="admin_guide"),
+    path("fix-categories/", views.fix_categories),
+
 
 ]
