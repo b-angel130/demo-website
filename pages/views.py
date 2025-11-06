@@ -42,14 +42,9 @@ def admin_guide(request):
 # -------------------- Dynamic Menu Page --------------------
 
 def dynamic_menu_view(request):
-    """
-    Displays restaurant menu grouped by category.
-    Categories: appetizer, main, drink.
-    Items are managed through Django admin only.
-    """
-    appetizers = MenuItem.objects.filter(category__iexact="appetizer")
-    mains = MenuItem.objects.filter(category__iexact="main")
-    drinks = MenuItem.objects.filter(category__iexact="drink")
+    appetizers = MenuItem.objects.filter(category="appetizer")
+    mains = MenuItem.objects.filter(category="main")
+    drinks = MenuItem.objects.filter(category="drink")
 
     context = {
         "appetizers": appetizers,
@@ -57,6 +52,7 @@ def dynamic_menu_view(request):
         "drinks": drinks,
     }
     return render(request, "dynamic_menu.html", context)
+
 
 
 # -------------------- Reservation Page --------------------

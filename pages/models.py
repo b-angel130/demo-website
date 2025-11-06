@@ -9,7 +9,7 @@ from django.utils import timezone
 class MenuItem(models.Model):
     CATEGORY_CHOICES = [
         ('appetizer', 'پیش‌غذا / Appetizer'),
-        ('main', ' غذای اصلی / Main'),
+        ('main', 'غذای اصلی / Main'),
         ('drink', 'نوشیدنی / Drink'),
     ]
 
@@ -23,9 +23,6 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.get_category_display()})"
-
-
-
 
 
 
