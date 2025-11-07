@@ -48,9 +48,10 @@
                 </a>
             </li>
             <li>
-                <a href="{% url 'dynamic_menu' %}" class="{% if request.path == '/dynamic-menu/' %}active{% endif %}">
+                <a href="{% url 'dynamic_menu' %}" class="{% if '/dynamic-menu/' in request.path %}active{% endif %}">
                     منوی پویا
                 </a>
+
             </li>
             <li>
                 <a href="{% url 'admin_guide' %}" class="{% if request.path == '/admin-guide/' %}active{% endif %}">
@@ -58,7 +59,7 @@
                 </a>
             </li>
              <li>
-                 <a href="{% url 'reservation' %}" class="{% if request.path == '/reservation/' %}active{% endif %} reserve-btn">
+                 <a href="{% url 'reservation' %}" class="{% if 'reservation' in request.path %}active{% endif %} reserve-btn">
                      رزرو میز
                  </a>
              </li>

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os.path
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,9 +26,7 @@ SECRET_KEY = 'django-insecure-hj$#66tg&9zoa&j)-f*rezt@70ua%b+9_%7mkf1+yuy*9z!c-r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost',
-    '127.0.0.1',
-    '.onrender.com',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com',]
 
 
 # Application definition
@@ -81,10 +80,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default="postgresql://amirali_db_user:CvG8jPsiRGq1xBXblWfvcEkPGhiuBhrz@dpg-d474aae3jp1c73bp2uo0-a.oregon-postgres.render.com:5432/amirali_db",
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 
