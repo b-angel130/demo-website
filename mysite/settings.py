@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default="postgresql://amirali_db_user:CvG8jPsiRGq1xBXblWfvcEkPGhiuBhrz@dpg-d474aae3jp1c73bp2uo0-a.oregon-postgres.render.com:5432/amirali_db",
+     'default': dj_database_url.parse(
+        "postgresql://amirali_db_user:CvG8jPsiRGq1xBXblWfvcEkPGhiuBhrz@dpg-d474aae3jp1c73bp2uo0-a.oregon-postgres.render.com:5432/amirali_db",
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=True,
     )
 }
 
